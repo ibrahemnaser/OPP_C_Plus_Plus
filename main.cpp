@@ -3,6 +3,8 @@
 
 #include "sum.hpp" // NO (< , >) for our made header file user (" , ")
 
+// #include "sum.hpp" // can't douple include any header file | OR | an error of "redefinition of" will appear
+
 using namespace std;
 
 int main()
