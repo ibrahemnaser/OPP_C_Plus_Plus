@@ -4,14 +4,10 @@
 #ifndef H_SUM_ // if not defined before proceed | OR | jump to the #endif
 #define H_SUM_
 
-int sum(int n)
-{
-  int res = 0;
+// NOW this file is an interface of an another implementaion file
+// this approach is important for separating "Declaration" from "Definition" | OR | "Interface" from "Implementation"
+// It is better for Readability, Maintainability, and Debugging
 
-  for (int i = 1; i <= n; i++)
-    res += i;
-
-  return res;
-}
+int sum(int n);
 
 #endif
