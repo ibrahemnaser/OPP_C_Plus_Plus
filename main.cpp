@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath>
 
-#include "sum.hpp"
+#include "sum.hpp" // NO (< , >) for our made header file user (" , ")
 
 using namespace std;
 
