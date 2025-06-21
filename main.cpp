@@ -5,6 +5,15 @@
 
 // #include "sum.hpp" // can't douple include any header file | OR | an error of "redefinition of" will appear
 
+/**
+ * After adding "Include guards" inside header file >> "Error: redefinition of ... " will not appear
+ */
+#include "sum.hpp"
+#include "sum.hpp"
+#include "sum.hpp"
+#include "sum.hpp"
+#include "sum.hpp"
+
 using namespace std;
 
 int main()
