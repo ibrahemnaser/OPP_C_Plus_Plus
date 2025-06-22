@@ -6,8 +6,10 @@
 
 // NOW this file is an interface of an another implementaion file
 // this approach is important for separating "Declaration" from "Definition" | OR | "Interface" from "Implementation"
-// It is better for Readability, Maintainability, and Debugging
+//  It is better for Readability, Maintainability, and Debugging
 
-int sum(int n);
+extern int total_calls;
+
+int sum_n(int n);
 
 #endif
