@@ -1,6 +1,9 @@
 #include <iostream>
 #include <vector>
 #include <map>
+
+#include "array_pointers.h"
+
 using namespace std;
 
 struct ST
@@ -172,10 +175,10 @@ int main()
   ST &st4 = mSt[1];
   ST st5 = mSt[2];
 
-  cout << "map STRUCT::: 1>>> " << &st1 << endl;
-  cout << "map [0]STRUCT::: 1>>> " << &mSt[1] << endl; // NOT SAME AS &st1
-  cout << "map [1]STRUCT::: 4>>> " << &st4 << endl;    // SAME ADDRESS AS mSt[1]
-  cout << "map [2]STRUCT::: 5>>> " << &st5 << endl;    // DIFFERENT ADDRESS
+  // cout << "map STRUCT::: 1>>> " << &st1 << endl;
+  // cout << "map [0]STRUCT::: 1>>> " << &mSt[1] << endl; // NOT SAME AS &st1
+  // cout << "map [1]STRUCT::: 4>>> " << &st4 << endl;    // SAME ADDRESS AS mSt[1]
+  // cout << "map [2]STRUCT::: 5>>> " << &st5 << endl;    // DIFFERENT ADDRESS
 
   // *********************************************************************************************** //
   // POINTERS
@@ -216,5 +219,9 @@ int main()
   // AND ALL OF THE ABOVE HELP US WITH DYNAMIC MEMORY ALLOCATION
 
   // *********************************************************************************************** //
+
+  // ARRAY POINTERS
+
+  learn_array_pointers();
   return 0;
 }
