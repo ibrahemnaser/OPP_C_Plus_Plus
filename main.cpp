@@ -3,6 +3,7 @@
 #include <map>
 
 #include "array_pointers.h"
+#include "functions_pointers.h"
 
 using namespace std;
 
@@ -222,6 +223,12 @@ int main()
 
   // ARRAY POINTERS
 
-  learn_array_pointers();
+  // learn_array_pointers();
+
+  // *********************************************************************************************** //
+
+  // POINTERS WITH FUNCTIONS
+
+  lear_fun_pointers();
   return 0;
 }
