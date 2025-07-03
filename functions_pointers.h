@@ -24,7 +24,7 @@ void d_m(int *x)
   // *x /= 2;
 }
 
-void lear_fun_pointers()
+void learn_fun_pointers()
 {
   cout << "***************************************************************" << endl;
   cout << "Pointers With Functions" << endl;

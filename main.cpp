@@ -4,6 +4,7 @@
 
 #include "array_pointers.h"
 #include "functions_pointers.h"
+#include "struct_pointers.h"
 
 using namespace std;
 
@@ -229,6 +230,13 @@ int main()
 
   // POINTERS WITH FUNCTIONS
 
-  lear_fun_pointers();
+  // learn_fun_pointers();
+
+  // *********************************************************************************************** //
+
+  // POINTERS WITH STRUCTS
+
+  learn_struct_pointer();
+
   return 0;
 }
