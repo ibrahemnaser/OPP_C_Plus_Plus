@@ -1,48 +1,38 @@
 #include <iostream>
 using namespace std;
 
-class Ty
+class Small
 {
-
 private:
-  int x;
-  int *y;
+  int a;
 
 public:
-  Ty() : Ty(0, 0)
+  Small()
   {
-    cout << "Default Constructor" << endl;
+    this->a = 0;
   }
-  Ty(int x, int _y) : x(x)
+  Small(int a, string const &msg)
   {
-    cout << "Constructor" << endl;
-    y = new int;
-    *y = _y;
-  }
-  ~Ty()
-  {
-    cout << "Destructor" << endl;
-    delete y; // memory leak
+    this->a = a;
+    cout << msg << endl;
   }
 
-  void setX(int x)
+  ~Small()
   {
-    this->x = x;
+    cout << "destructor called >>> " << this->a << endl;
   }
+};
 
-  int getX()
-  {
-    return x;
-  }
+class Big
+{
+private:
+  Small s1;
+  Small s2;
+  Small s3;
 
-  int getY()
+public:
+  Big() : s2(2, "s2"), s1(1, "s1"), s3(3, "s3")
   {
-    return *y;
-  }
-
-  void setY(int _y)
-  {
-    *y = _y;
   }
 };
 
@@ -53,19 +43,8 @@ int main()
   cout << "************ OOP WORLD ************" << endl;
   cout << "***********************************" << endl;
 
-  Ty t1(100, 88);
-  cout << "x = " << t1.getX() << endl;
+  Big b;
 
-  Ty t2;
-  t2.setX(10);
-  t2.setY(20);
-  cout << "x = " << t2.getX() << endl;
-  cout << "y = " << t2.getY() << endl;
-
-  Ty *t3 = new Ty(23, 21);
-  cout << "x = " << t3->getX() << endl;
-
-  delete t3; // memory leak
-
+  cout << "MyClass object going out of scope..." << endl;
   return 0;
 }
