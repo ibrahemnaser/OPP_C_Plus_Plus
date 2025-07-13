@@ -1,38 +1,74 @@
 #include <iostream>
 using namespace std;
 
-class Small
+// Class A
+class ClassA
 {
-private:
-  int a;
-
 public:
-  Small()
+  ClassA()
   {
-    this->a = 0;
+    cout << "ClassA Constructor (Default)" << endl;
   }
-  Small(int a, string const &msg)
+  ClassA(int x)
   {
-    this->a = a;
-    cout << msg << endl;
+    cout << "ClassA Constructor (int):: " << x << endl;
   }
 
-  ~Small()
+  // Add a destructor to observe object destruction
+  ~ClassA()
   {
-    cout << "destructor called >>> " << this->a << endl;
+    cout << "ClassA Destructor" << endl;
   }
 };
 
-class Big
+// Class B
+class ClassB
 {
 private:
-  Small s1;
-  Small s2;
-  Small s3;
+  ClassA aa; // Member of type ClassA >> constructor will be called
+  int x;
 
 public:
-  Big() : s2(2, "s2"), s1(1, "s1"), s3(3, "s3")
+  ClassB()
   {
+    cout << "ClassB Constructor (Default)" << endl;
+  }
+  ClassB(int val_x)
+  {
+    // This is a crucial line for the question. What happens here?
+    cout << "ClassB Constructor (int) first" << endl;
+    this->aa = ClassA(val_x); // Assignment, not initialization in member initializer list
+    this->x = val_x;
+    cout << "ClassB Constructor (int) second" << endl;
+  }
+
+  // Add a destructor for ClassB
+  ~ClassB()
+  {
+    cout << "ClassB Destructor" << endl;
+  }
+};
+
+// Class C
+class ClassC
+{
+private:
+  int &y;
+  ClassB bb; // Member of type ClassB
+
+public:
+  // This is the constructor for ClassC.
+  // Think about how you would finish this constructor using initializer lists or assignment.
+  ClassC(int &ref_y, const ClassB ref_bb) : y(ref_y)
+  {
+    this->bb = ref_bb;
+    cout << "ClassC Constructor" << endl;
+  }
+
+  // Add a destructor for ClassC
+  ~ClassC()
+  {
+    cout << "ClassC Destructor" << endl;
   }
 };
 
@@ -43,7 +79,9 @@ int main()
   cout << "************ OOP WORLD ************" << endl;
   cout << "***********************************" << endl;
 
-  Big b;
+  int x = 10;
+  ClassB objB(5);
+  ClassC objC(x, objB);
 
   cout << "MyClass object going out of scope..." << endl;
   return 0;
